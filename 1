@@ -1,0 +1,24 @@
+
+
+create table TBL_Customerr_1366168
+(
+CustomerId number(8) primary key,
+CustomerName varchar2(25) not null,
+Address varchar2(50) not null,
+Mobile number(10) not null
+)
+insert into TBL_Customerr_1366168 values (25,'rabta','ghanta',878786);
+select * from TBL_Customerr_1366168; 
+
+create table TBL_Productr_1366168(
+Pid number(8) primary key,
+PName varchar2(25) not null,
+Ptype varchar2(25) not null,
+Price number(8,2) not null,
+Quant number(5) not null,
+CustomerId number(8),
+foreign key(CustomerId) references TBL_Customerr_1366168 (CustomerId) 
+)
+insert into TBL_Productr_1366168 values (1331,'raa','napk',145,56,25);
+select * from TBL_Productr_1366168; 
+UPDATE TBL_Productr_1366168 set Price=176 where Pid=1331;
